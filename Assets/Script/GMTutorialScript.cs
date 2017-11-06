@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GMTutorialScript : MonoBehaviour {
 
+	public GameObject skipa;
+
 	public GameObject modalNick;
 	public Text nick;
 	private SalvaDadosEntreScenes salvador;
@@ -97,7 +99,7 @@ public class GMTutorialScript : MonoBehaviour {
 					print ("Faltam imagens para as cenas!");
 				}
 			} else {
-				skipaTutorial ();
+				finalizaTutorial ();
 				print ("fim do tutorial");
 			}
 		}
@@ -142,6 +144,29 @@ public class GMTutorialScript : MonoBehaviour {
 	}
 
 	public void skipaTutorial() {
+		int ccena, image, novaCat; char categoria; bool achou = false;
+		for(ccena = cenaAct; ccena < msg.Length && !(achou=msg[ccena].Contains("<input>")); ++ccena);
+		if (!achou)
+			return;
+
+		for (image = idImagens, novaCat = 0,
+			categoria = imagensName [image] [0];
+			image < imagensName.Count && novaCat < (ccena-cenaAct); ++image) {
+			if(categoria != imagensName[image][0]){
+				categoria = imagensName [image] [0];
+				novaCat++;
+			}
+		};
+
+		cenaAct = ccena;
+		idImagens = image;
+		subCenaAct = 99;
+		desativaSkip ();
+		passaTexto ();
+		print ("Skipei o Tutorial");
+	}
+
+	private void finalizaTutorial(){
 		// Carregar scene de início de usabilidade
 		SceneManager.LoadSceneAsync("usabilidade");
 	}
@@ -183,6 +208,7 @@ public class GMTutorialScript : MonoBehaviour {
 		if (msgAct [subCenaAct].Contains ("<input>")) {
 			msgAct [subCenaAct] = msgAct [subCenaAct].Replace("<input>", "");
 			modalNick.SetActive (true);
+			desativaSkip ();
 		}
 	}
 
@@ -192,5 +218,9 @@ public class GMTutorialScript : MonoBehaviour {
 				salvador.leNick()
 			);
 		}
+	}
+
+	private void desativaSkip(){
+		skipa.SetActive(false);
 	}
 }
