@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HistoricoScript : MonoBehaviour {
 
@@ -210,5 +211,10 @@ public class HistoricoScript : MonoBehaviour {
         StreamReader leitura = new StreamReader(entrada);
         StreamReader escrita = new StreamReader(Application.dataPath + "/Resources/Historico/" + tipo + ".ini");
     }
+
+	public void Voltar()
+	{
+		SceneManager.LoadSceneAsync("menuInicial");
+	}
 
 }

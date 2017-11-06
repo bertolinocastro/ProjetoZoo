@@ -147,13 +147,16 @@ public class SalvaDadosEntreScenes : MonoBehaviour
 
 
 	// Códigos para abertura do programa
+	public void tutorialJaVisto(bool op){
+		string result;
+		result = op ? "true" : "false";
+
+		PlayerPrefs.SetString ("tutorialVisto", result);
+		PlayerPrefs.Save ();
+	}
 	public bool tutorialJaVisto(){
 		return PlayerPrefs.HasKey ("tutorialVisto") &&
-		PlayerPrefs.GetString ("tutorialVisto").Equals ("true");
-	}
-	public void tutorialJaVisto(bool op){
-		PlayerPrefs.SetString ("tutorialVisto", op.ToString());
-		PlayerPrefs.Save ();
+		PlayerPrefs.GetString ("tutorialVisto") == "true";
 	}
 	// FIM Códigos para abertura do programa
 
@@ -169,5 +172,25 @@ public class SalvaDadosEntreScenes : MonoBehaviour
 		return null;
 	}
 	// FIM Códigos para salvamento do nick do usuário
+
+	// Códigos para determinar se o menuPrincipal irá executar o modo tutorial
+	public void setaMenuPrincipalTutorial(bool modo){
+		string result;
+		if (modo)
+			result = "true";
+		else
+			result = "false";
+		PlayerPrefs.SetString ("mainMenuTut", result);
+		PlayerPrefs.Save ();
+		print ("Salvei o tutorial do menu principal: "+result);
+	}
+	public bool leMenuPrincipalTutorial(){
+		if (PlayerPrefs.HasKey ("mainMenuTut")) {
+			if ("true" == PlayerPrefs.GetString ("mainMenuTut"))
+				return true;
+		}
+		return false;
+	}
+	// FIM Códigos para determinar se o menuPrincipal irá executar o modo tutorial
 }
 

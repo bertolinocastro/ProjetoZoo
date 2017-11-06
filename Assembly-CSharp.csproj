@@ -63,9 +63,13 @@
      <Compile Include="Assets\Script\SalvaDadosEntreScenes.cs" />
      <Compile Include="Assets\Script\SpawnaCantos.cs" />
      <Compile Include="Assets\Script\TextScript.cs" />
+     <Compile Include="Assets\Script\configuracao.cs" />
      <Compile Include="Assets\Script\frisbeScript.cs" />
      <Compile Include="Assets\Script\gizmosScript.cs" />
+     <Compile Include="Assets\Script\loja.cs" />
+     <Compile Include="Assets\Script\menuJogar.cs" />
      <Compile Include="Assets\Script\menuPrincipalScript.cs" />
+     <Compile Include="Assets\Script\ranking.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CylinderTargetBehaviour.cs" />
@@ -113,6 +117,8 @@
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\StreamingAssets\Vuforia\Shoulders_Therapy.xml" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
+     <None Include="Assets\EmptyTextFile.txt" />
+     <None Include="Assets\Resources\textosTutorial\falasTutMenuJogar.txt" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Font\open-sans\Apache License.txt" />
      <None Include="Assets\Vuforia\Editor\WebcamProfiles\profiles.xml" />

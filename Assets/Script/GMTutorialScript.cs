@@ -45,8 +45,13 @@ public class GMTutorialScript : MonoBehaviour {
 		filenamesInit ();
 		backgroudInit ();
 		mensagensInit ();
+		ativaTodosOsTutoriais ();
 	
 		start = Time.time;
+	}
+
+	private void ativaTodosOsTutoriais(){
+		salvador.setaMenuPrincipalTutorial (true);
 	}
 
 	private void backgroudInit(){

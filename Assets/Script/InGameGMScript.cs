@@ -17,6 +17,11 @@ public class InGameGMScript : MonoBehaviour
 	public GameObject[] estrelasGray;
 	//public GameObject mascoteGuiaGO;
 
+	public UnityEngine.UI.Image mascoteIMG;
+	public Sprite mascoteFrontal;
+	public Sprite mascotePerfilBaixo;
+	public Sprite mascotePerfilEsticado;
+
 	private MessengerScript messenger;
 	private ListaImTargetsScript listaIMTargetScript;
 	private GerenciadorCircuitoScript gerenciadorCircuito;
@@ -44,14 +49,19 @@ public class InGameGMScript : MonoBehaviour
 
 	private bool estaFinalizado = false;
 
-	// Use this for initialization
-	void Start () {
+	void Awake(){
 		listaIMTargetScript = gameObject.GetComponent<ListaImTargetsScript> (); listaIMTargetScript.Inicializar ();
 		messenger = gameObject.AddComponent<MessengerScript> ();
 		gerenciadorCircuito = gameObject.AddComponent<GerenciadorCircuitoScript> ();
 		salvador = gameObject.AddComponent<SalvaDadosEntreScenes> ();
 		mascoteGuia = gameObject.AddComponent<MascoteGuiaScript> ();
 		identificaJeb = gameObject.AddComponent<IdentificadorJeb> ();
+	}
+
+	// Use this for initialization
+	void Start () {
+		salvador.setaMenuPrincipalTutorial (false);
+		salvador.tutorialJaVisto (true);
 
 		// turtle -> lion -> cow -> turtle
 
@@ -132,16 +142,20 @@ public class InGameGMScript : MonoBehaviour
 							if (identificaJeb.DobrouNovamenteBraco ()) {
 								frisbeScrpt.Arremessar ();
 								gerenciadorCircuito.AvancarPasso ();
+								mascoteFrente ();
 								if (!gerenciadorCircuito.TemProximo ())
 									mascoteGuia.FinalizaPassos ();
 								tempoParaMarcadores = Time.time + 2.0f;
 							} else {
+								mascoteDobrado ();
 								mascoteGuia.DobrarBracos ();
 							}
 						} else {
+							mascoteEsticado ();
 							mascoteGuia.EsticarBracos ();
 						}
 					} else {
+						mascoteDobrado ();
 						mascoteGuia.DobrarBracos ();
 					}
 				} else {
@@ -181,10 +195,16 @@ public class InGameGMScript : MonoBehaviour
 		SceneManager.LoadSceneAsync ("ingame");
 	}
 
-	public void debuguguugug(){
-		CanvasInGame.SetActive (false); CanvasFimGame.SetActive (true);
-		mascoteGuia.FinalizarFase (tempoDeJogoIni, 60.0f);
-		circuitoImpossivel = true;
+	public void mascoteFrente(){
+		mascoteIMG.sprite = mascoteFrontal;
+	}
+
+	public void mascoteDobrado(){
+		mascoteIMG.sprite = mascotePerfilBaixo;
+	}
+
+	public void mascoteEsticado(){
+		mascoteIMG.sprite = mascotePerfilEsticado;
 	}
 
 	private void CircuitoInexistente(){

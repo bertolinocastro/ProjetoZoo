@@ -63,6 +63,8 @@
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\StreamingAssets\Vuforia\Shoulders_Therapy.xml" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
+     <None Include="Assets\EmptyTextFile.txt" />
+     <None Include="Assets\Resources\textosTutorial\falasTutMenuJogar.txt" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Font\open-sans\Apache License.txt" />
      <None Include="Assets\Vuforia\Editor\WebcamProfiles\profiles.xml" />

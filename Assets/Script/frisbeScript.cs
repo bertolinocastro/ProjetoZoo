@@ -51,9 +51,10 @@ public class frisbeScript : MonoBehaviour {
 		Destroy (frisbeGO.gameObject, tempoDeColisao+0.1f);
 	}
 
-	IEnumerator AnimaComDelay(float temp){
+	private IEnumerator AnimaComDelay(float temp){
 		yield return new WaitForSeconds (temp);
-		kitten.GetComponent<KittenScript> ().setaAnimation ("Meow");
+		print ("O Script 'frisbeScript' está com a animação do objeto filho do Image Target DESATIVADA!");
+		//kitten.GetComponent<KittenScript> ().setaAnimation ("Meow");
 	}
 
 	public void direcionarFrisbe(){
