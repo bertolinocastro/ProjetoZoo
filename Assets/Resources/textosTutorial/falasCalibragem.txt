@@ -1,15 +1,2 @@
-﻿Kung: Oi <usuário>! Eu vou lhe acompanhar durante essa intensa jornada.<fala>
-Nós precisamos trazer de volta os meus amigos. E, para isso, precisamos conquistar a confiança deles.<fala>
-Se você jogar alimentos para eles, eles vão gostar!<fala>
-
-Kung: Vamos lá. Vou lhe ensinar como alimentá-los.<fala>
-Você precisará dobrar os braços e esticá-los para arremessar os alimentos. Simples assim!
-Kung: Aponte sua câmera para um dos marcadores.<fala>Agora dobre seus braços, encostando seus cotovelos no corpo.<fala>
-Agora clique em "Calibrar".<fala>
-Pronto, agora meus amigos saberão quando você estará se preparando para lançar os alimentos.<fala>
-Agora vamos fazer o que é necessário para lançar.
-
-Kung: Aponte sua câmera para o <marcador>.<fala>
-Agora estique seus braços para frente até a altura dos ombros.<fala>
-Agora clique em "Calibrar".<fala>
-Pronto! Agora nosso amigo sabe quando vai receber comida!
+﻿Kung: Olá <usuário>! para você ganhar a confiança dos meus amigos, você terá que jogar alimentos para eles comerem. Para arremessar você precisará dobrar os braços e esticá-los .<fala>
+Kung: Aponte sua câmera para o marcador. Agora dobre seus braços, encostando seus cotovelos no corpo. Agora clique em "Calibrar". Com isso os animais vão saber que você está se preparando para dar alimentos a ele.<fala>

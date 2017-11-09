@@ -1,2 +1,2 @@
-﻿Kung: <usuario>, já temos tudo pronto para começar.<fala>
-Kung: Para ir aos habitats onde estão meus amiguinhos, você precisa tocar em "Jogar".<piscar>
+﻿Kung: Pronto, agora podemos ir resgatar meus amigos. Você precisa tocar em “Jogar”.<fala>
+Kung: Aqui mostra as fases onde estarão meus amigos.<fala>Toque em uma delas para iniciar!

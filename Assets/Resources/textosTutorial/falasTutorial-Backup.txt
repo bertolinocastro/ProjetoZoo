@@ -1,0 +1,52 @@
+﻿Olá, seja bem-vindo ao "ZooRehab"!<fala>
+Esse é um zoológico muito especial e querido pelos seus visitantes.<fala>
+Aqui o lar dos animais são casinhas bem aconchegantes.
+<cena>
+
+Temos diversos animais vivendo conosco, como leões, pinguins, girafas, zebras... Eles são bem comilões. Hahaha
+<cena>
+
+Nosso integrante que mais atrai as atenções é o panda chinês 'Kung'.<fala>
+Os visitantes ficam fascinados pela inteligência de Kung.<fala>
+Kung sabe se comunicar com os treinadores e seus amiguinhos pela linguagem 'Fu', que é uma mistura de gestos e grunidos.<fala>
+Interessante, não?<fala>
+Vamos lá ver Kung. Ele vai tomar banho agora.<fala>
+É uma boa oportunidade para vermos sua linguagem Fu!
+<cena>
+
+Esses são os treinadores de Kung. Eles acabaram de preparar a bacia dele.<fala>
+Agora é a hora de levá-lo ao banho.
+<cena>
+
+Oh, não!<fala>Kung ficou com medo de tomar banho e deu um golpe Fu nos treinadores!<fala>
+Kung está correndo!
+<cena>
+
+Kung está, acidentalmente, esbarrando na porta das casinhas dos outros animais e elas estão abrindo!<fala>
+Os amigos de Kung estão fugindo!
+<cena>
+
+Os treinadores finalmente alcançaram Kung. Mas eles ainda precisam correr atrás dos outros animaizinhos.<fala>
+Os treinadores vão precisar de ajuda.
+
+<cena>
+
+Os treinadores estão preocupados, pois os animais fugiram para regiões muito distintas das do seu habitat natural.
+
+<cena>
+
+Kung se acalmou e disse, na língua Fu, que poderia ajudar na busca pelos seus amigos, pois eles o entendiam.
+
+<cena>
+
+Os treinadores lembraram-se de um ancião conhecido por ganhar a confiança dos animais fora da cidade.<fala>
+Ele fala a língua Fu também!
+<cena>
+
+Treinadores: Olá, ancião! Somos os treinadores do "ZooRehab".<fala>
+Nossos animais fugiram e precisamos da sua ajuda!<fala>
+
+Como você se chama?<input>
+<cena>
+
+Treinadores: <usuario>, esse é Kung e ele irá lhe acompanhar na busca! Boa sorte!
