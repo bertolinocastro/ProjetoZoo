@@ -1,40 +1,39 @@
 ﻿Bem vindo Ao “ZooRehab”!<fala>
-Um Zoológico muito especial e com diversos animais.<fala>
+Um Zoológico muito especial e com diversos animais.
 <cena>
 
 Temos diversos animais vivendo conosco, como leões, pinguins, girafas, zebras...
 <cena>
 
-Um desses animais é ‘Kung’, um panda muito inteligente  que consegue se comunicar com a linguagem ‘Fu’, que é uma mistura de gestos e grunidos. <fala>
+Um desses animais é ‘Kung’, um panda muito inteligente  que consegue se comunicar com a linguagem ‘Fu’, que é uma mistura de gestos e grunidos.
 
 <cena>
 
-Todos os dias os treinadores preparam o banho de Kung<fala>
+Todos os dias os treinadores preparam o banho de Kung.
 <cena>
-Certo dia, Kung foi tomar banho e algo o assustou, fazendo com que ele desse o golpe Fu nos treinadores e fugindo.<fala>
-<cena>
-
-Durante a fuga, Kung acabou esbarrando nas jaulas dos seus amigos e libertando-os.<fala>
+Certo dia, Kung foi tomar banho e algo o assustou, fazendo com que ele desse o golpe Fu nos treinadores e fugindo.
 <cena>
 
-Após certo tempo, os treinadores conseguiram alcançar Kung, <fala>
-
+Durante a fuga, Kung acabou esbarrando nas jaulas dos seus amigos e libertando-os.
 <cena>
 
-mas ainda faltavam os seus outros amiguinhos, que escaparam para regiões fora do seu habitat natural.<fala>
-<cena>
-
-Após acalmar-se, Kung disse que iria ajudá-los a ganhar a confiança de seus amigos.<fala>
+Após certo tempo, os treinadores conseguiram alcançar Kung, 
 
 <cena>
 
-Os treinadores então lembraram-se de um ancião que tem facilidade em ganhar a confiança dos animais e que também consegue se comunicar com Kung pela língua Fu.<fala>
+mas ainda faltavam os seus outros amiguinhos, que escaparam para regiões fora do seu habitat natural.
 <cena>
 
-Treinadores: Olá, ancião!Precisamos da sua ajuda para resgatar todos os animais.<fala>
+Após acalmar-se, Kung disse que iria ajudá-los a ganhar a confiança de seus amigos.
 
+<cena>
 
-Como você se chama?<input>
+Os treinadores então lembraram-se de um ancião que tem facilidade em ganhar a confiança dos animais e que também consegue se comunicar com Kung pela língua Fu.
+<cena>
+
+Treinadores: Olá, ancião!Precisamos da sua ajuda para resgatar todos os animais.
+
+Como você se chama? <input>
 <cena>
 
 Treinadores: <usuario>, esse é Kung ele irá te ajudar a ganhar a confiança de seus amigos.

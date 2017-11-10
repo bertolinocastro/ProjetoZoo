@@ -181,6 +181,13 @@ public class GMTutorialScript : MonoBehaviour {
 		idAnim = idImagens;
 
 		char cenaGrupo = imagensName [idImagens] [0];
+        if(cenaGrupo == 'j')
+        {
+            delayPAnimacao = 2.0f;
+        }else
+        {
+            delayPAnimacao = 0.5f;
+        }
 		qtdImagensPAnimacao = 1;
 		for (int i = idAnim + 1; i < imagensName.Count && cenaGrupo == imagensName [i] [0]; ++i) {
 			++qtdImagensPAnimacao;
