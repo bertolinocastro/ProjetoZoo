@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/scene/usabilidade.unity
-=======
-- path: Assets/scene/calibragem.unity
->>>>>>> d337f36d6cf913a5391550a34a6e69ddb748d424
   isLoaded: 1
   isActive: 1

@@ -3,14 +3,16 @@ Para ganhar a confiança dos meus amigos, você terá de jogar alimentos para el
 Para arremessar, você precisará dobrar e esticar os braços.<fala>
 Com isso, os animais saberão que você está se preparando para lançar os alimentos.<fala>
 
-Agora dobre seus braços, encostando seus cotovelos no corpo.<fala>
+Agora dobre seus braços, encostando seus cotovelos no corpo.<dobrar><fala>
 Agora toque na tela.<fala>
 <calibrar><fala>
 
 Agora vamos fazer o que é necessário para lançar.<fala>
 
-Agora estique seus braços para frente até a altura dos ombros.<fala>
+Agora estique seus braços para frente até a altura dos ombros.<esticar><fala>
 Agora toque na tela.<fala>
 <calibrar><fala>
 
 Pronto! Agora nosso amigo sabe quando vai receber comida!<fala>
+
+Se você deseja repetir os passos, clique em Reiniciar. Senão, em prosseguir.<finalizacao>
