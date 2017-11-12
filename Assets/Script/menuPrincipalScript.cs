@@ -153,16 +153,17 @@ public class menuPrincipalScript : MonoBehaviour {
 
 	public void Jogar()
 	{
-		SceneManager.LoadSceneAsync("Circuito");
+		StopCoroutine ("printaLetras");
+		SceneManager.LoadScene("Circuito");
 	}
 
 	public void Calibrar()
 	{
-		SceneManager.LoadSceneAsync("calibragem");
+		SceneManager.LoadScene("calibragem");
 	}
 	public void Configuracao()
 	{
-		SceneManager.LoadSceneAsync("Configuracao");
+		SceneManager.LoadScene("Configuracao");
 	}
 
 	public void Loja()
@@ -172,11 +173,11 @@ public class menuPrincipalScript : MonoBehaviour {
 
 	public void Ranking()
 	{
-		SceneManager.LoadSceneAsync("Ranking");
+		SceneManager.LoadScene("Ranking");
 	}
 	public void Historico()
 	{
-		SceneManager.LoadSceneAsync("Historico");
+		SceneManager.LoadScene("Historico");
 	}
 
 }

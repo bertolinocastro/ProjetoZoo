@@ -122,11 +122,11 @@ public class menuJogar : MonoBehaviour {
 
 	public void inGame()
 	{
-		SceneManager.LoadSceneAsync("ingame");
+		SceneManager.LoadScene("ingame");
 	}
 
 	public void Voltar()
 	{
-		SceneManager.LoadSceneAsync("menuInicial");
+		SceneManager.LoadScene("menuInicial");
 	}
 }
