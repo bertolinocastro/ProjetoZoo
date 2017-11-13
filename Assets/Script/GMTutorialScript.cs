@@ -18,6 +18,7 @@ public class GMTutorialScript : MonoBehaviour {
 	private int qtdImagensPAnimacao = 0;
 	private float delayPAnimacao = 0.5f;
 	private int idAnim = 0;
+	private List<int> iniImagensCena;
 
 	public List<string> imagensName;
 
@@ -37,6 +38,9 @@ public class GMTutorialScript : MonoBehaviour {
 	private int cenaAct = 0;
 	private int subCenaAct = 0;
 
+	private bool reescrevi = false;
+	private bool atingiuInput = false;
+
 	private float start;
 
 	// Use this for initialization
@@ -45,9 +49,23 @@ public class GMTutorialScript : MonoBehaviour {
 		filenamesInit ();
 		backgroudInit ();
 		mensagensInit ();
+		cenasGrupoInit ();
 		ativaTodosOsTutoriais ();
 	
 		start = Time.time;
+	}
+
+	private void cenasGrupoInit (){
+		iniImagensCena = new List<int> ();
+
+		char cenaGrupo = imagensName [0] [0];
+		iniImagensCena.Add (0);
+		for (int i = 1; i < imagensName.Count; ++i) {
+			if (cenaGrupo != imagensName [i] [0]) {
+				iniImagensCena.Add (i);
+				cenaGrupo = imagensName [i] [0];
+			}
+		}
 	}
 
 	private void ativaTodosOsTutoriais(){
@@ -79,11 +97,51 @@ public class GMTutorialScript : MonoBehaviour {
 	void Update () {
 	}
 
+	public void voltaTexto(){
+		
+		print ("Entrei nesse if daqui. cenaAct:"+cenaAct+";subcenaAct:"+subCenaAct+
+			"idAnim:"+idAnim
+		);
+		if(atingiuInput){
+			return;
+		}
+		if (!passavel) {
+			return;
+		}
+
+		if (!reescrevi && msgAct [subCenaAct - 1].Length >= textLength) {
+			subCenaAct--;
+			passaTexto ();
+			reescrevi = true;
+			return;
+		}
+
+		if (subCenaAct > 1) {
+			subCenaAct -= 2;
+			passaTexto ();
+			reescrevi = false;
+		} else {
+			if (cenaAct > 1) {
+				cenaAct -= 2;
+				msgAct = msg [cenaAct].Split (new string[] { "<fala>" }, System.StringSplitOptions.None);
+				subCenaAct = 0;
+
+				passaTexto ();
+				anteriorCena ();
+				cenaAct++;
+				reescrevi = false;
+			}
+		}
+
+	}
+
 	public void passaTexto(){
+		print ("Chamara o Passa Texto!");
 		if (subCenaAct < msgAct.Length) {
 			if (passavel) {
 				//pular = false;
 				checaInput ();
+				checaUsuario ();
 				StartCoroutine ("printaLetras");
 				//pular = false;
 			} else {
@@ -92,8 +150,9 @@ public class GMTutorialScript : MonoBehaviour {
 		} else {
 			if (cenaAct < msg.Length) {
 				subCenaAct = 0;
-				checaUsuario ();
 				msgAct = msg [cenaAct++].Split (new string[] {"<fala>"}, System.StringSplitOptions.None);
+				checaInput ();
+				checaUsuario ();
 				//textoFalas.text = msgAct [subCenaAct++];
 				if (passavel) {
 					StartCoroutine ("printaLetras");
@@ -154,17 +213,8 @@ public class GMTutorialScript : MonoBehaviour {
 		if (!achou)
 			return;
 
-		for (image = idImagens, novaCat = 0,
-			categoria = imagensName [image] [0];
-			image < imagensName.Count && novaCat < (ccena-cenaAct); ++image) {
-			if(categoria != imagensName[image][0]){
-				categoria = imagensName [image] [0];
-				novaCat++;
-			}
-		};
-
 		cenaAct = ccena;
-		idImagens = image;
+		idImagens = iniImagensCena[cenaAct];
 		subCenaAct = 99;
 		desativaSkip ();
 		passaTexto ();
@@ -176,16 +226,19 @@ public class GMTutorialScript : MonoBehaviour {
 		SceneManager.LoadSceneAsync("usabilidade");
 	}
 
+	private void anteriorCena(){
+		idImagens = iniImagensCena [cenaAct];
+		proximaCena ();
+	}
+
 	private void proximaCena() {
 		StopCoroutine ("animaImagem");
 		idAnim = idImagens;
 
 		char cenaGrupo = imagensName [idImagens] [0];
-        if(cenaGrupo == 'j')
-        {
+        if(cenaGrupo == 'j'){
             delayPAnimacao = 2.0f;
-        }else
-        {
+        }else{
             delayPAnimacao = 0.5f;
         }
 		qtdImagensPAnimacao = 1;
@@ -221,12 +274,14 @@ public class GMTutorialScript : MonoBehaviour {
 			msgAct [subCenaAct] = msgAct [subCenaAct].Replace("<input>", "");
 			modalNick.SetActive (true);
 			desativaSkip ();
+			atingiuInput = true;
 		}
 	}
 
 	private void checaUsuario(){
-		if (msg [cenaAct].Contains ("<usuario>")) {
-			msg [cenaAct] = msg [cenaAct].Replace ("<usuario>",
+		print ("Entrei no checausuario");	
+		if (msgAct [subCenaAct].Contains ("<usuario>")) {
+			msgAct [subCenaAct] = msgAct [subCenaAct].Replace ("<usuario>",
 				salvador.leNick()
 			);
 		}

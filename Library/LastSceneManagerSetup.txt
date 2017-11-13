@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scene/usabilidade.unity
+- path: Assets/scene/tutorial.unity
   isLoaded: 1
   isActive: 1

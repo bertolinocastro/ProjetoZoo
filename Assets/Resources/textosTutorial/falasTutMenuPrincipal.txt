@@ -1,2 +1,2 @@
-﻿Pôpo: <usuario>, já temos tudo pronto para começar.<fala>
-Pôpo: Para ir aos habitats onde estão meus amigos, você precisa tocar em "Jogar".<piscar>
+﻿<usuario>, já temos tudo pronto para começar.<fala>
+Para ir aos habitats onde estão meus amigos, você precisa tocar em Jogar.<piscar>

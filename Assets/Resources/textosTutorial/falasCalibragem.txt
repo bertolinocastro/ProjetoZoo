@@ -15,4 +15,4 @@ Agora toque na tela.<fala>
 
 Pronto! Agora nosso amigo sabe quando vai receber comida!<fala>
 
-Se você deseja repetir os passos, clique em Reiniciar. Senão, em prosseguir.<finalizacao>
+Deseja reiniciar as instruções ou prosseguir?<finalizacao>
