@@ -62,6 +62,7 @@
      <None Include="Assets\Vuforia\Shaders\RenderVideoBackground.shader" />
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\StreamingAssets\Vuforia\Shoulders_Therapy.xml" />
+     <None Include="Assets\Resources\textosTutorial\textoInstrutor.txt" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
      <None Include="Assets\EmptyTextFile.txt" />
      <None Include="Assets\Resources\textosTutorial\falasTutMenuJogar.txt" />

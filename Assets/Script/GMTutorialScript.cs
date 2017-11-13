@@ -7,6 +7,17 @@ using UnityEngine.SceneManagement;
 
 public class GMTutorialScript : MonoBehaviour {
 
+	private string[] msgInstrutor;
+	private List<Vector3> posesInstrutor;
+	public TextAsset textoInstrutorAsset;
+	public GameObject modalInstrutor;
+	public RectTransform imagemInstrutorRect;
+	public Image imagemInstrutor;
+	public Text textInstrutor;
+	private int idTextInstrutor = 0;
+
+	private List<Sprite> instrutorSprites;
+
 	public GameObject skipa;
 
 	public GameObject modalNick;
@@ -48,11 +59,53 @@ public class GMTutorialScript : MonoBehaviour {
 		salvador = gameObject.AddComponent<SalvaDadosEntreScenes> ();
 		filenamesInit ();
 		backgroudInit ();
-		mensagensInit ();
 		cenasGrupoInit ();
 		ativaTodosOsTutoriais ();
 	
+		instrutorInit ();
+
 		start = Time.time;
+	}
+
+	private void instrutorInit(){
+		instrutorSprites = new List<Sprite> (Resources.LoadAll<Sprite> ("pointerImages/"));
+		imagemInstrutor.sprite = instrutorSprites [0];
+		StartCoroutine("animaInstrutor");
+
+		msgInstrutor = textoInstrutorAsset.text.Split(new string[] {"<fala>"}, System.StringSplitOptions.None);
+		textInstrutor.text = msgInstrutor [idTextInstrutor];
+
+
+		Vector3[] u = {
+			new Vector3(250.0f, 0.0f, 0.0f),
+			new Vector3(-320.0f, -55.0f, 0.0f),
+			new Vector3(-300.0f, 125.0f, 0.0f),
+		};
+
+		posesInstrutor = new List<Vector3> (u);
+
+		imagemInstrutorRect.localPosition = posesInstrutor [idTextInstrutor++];
+
+	}
+
+	private IEnumerator animaInstrutor(){
+		int i = 0;
+		for (;;) {
+			i = i != 0 ? 0 : 1;
+			imagemInstrutor.sprite = instrutorSprites [i];
+			yield return new WaitForSeconds (delayPAnimacao);
+		}
+	}
+
+	public void toqueNoInstrutor(){
+		if (idTextInstrutor < msgInstrutor.Length) {
+			imagemInstrutorRect.localPosition = posesInstrutor [idTextInstrutor];
+			textInstrutor.text = msgInstrutor [idTextInstrutor++];
+		} else {
+			StopCoroutine ("animaInstrutor");
+			Destroy (modalInstrutor.gameObject);
+			mensagensInit ();
+		}
 	}
 
 	private void cenasGrupoInit (){
@@ -212,6 +265,10 @@ public class GMTutorialScript : MonoBehaviour {
 		for(ccena = cenaAct; ccena < msg.Length && !(achou=msg[ccena].Contains("<input>")); ++ccena);
 		if (!achou)
 			return;
+
+		StopCoroutine ("printaLetras");
+		passavel = true;
+		pular = false;
 
 		cenaAct = ccena;
 		idImagens = iniImagensCena[cenaAct];
